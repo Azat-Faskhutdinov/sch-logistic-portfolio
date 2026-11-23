@@ -1,0 +1,156 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.ui-dropdown {
+  position: relative;
+  max-height: max-content;
+
+  &__panel {
+    @include mixins.info;
+    border-radius: 8px;
+    background: var(--white, #FFF);
+    padding: 12px 24px;
+    border: 1px solid var(--white, #FFF);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: vars.$duration border-color vars.$timing;
+
+    @media (hover: hover) {
+        &:hover {
+            border-color: var(--blue-btn, #001A83);
+        }
+    }
+
+    &:has([is-error]) {
+      border-color: var(--error, #CB0000);
+
+      .ui-dropdown__label-title {
+        color: var(--error, #CB0000);
+      }
+    }
+
+    span {
+      display: block;
+      width: 100%;
+    }
+
+    input {
+      cursor: initial;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    color: var(--blue-btn, #001A83);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%; /* 25.2px */
+
+    display: flex;
+    width: 54px;
+    height: 54px;
+    padding: 13px 10px;
+    justify-content: center;
+    align-items: center;
+    transition: vars.$duration transform vars.$timing;
+  }
+
+  &__label-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: vars.$duration color vars.$timing;
+  }
+
+  &__body {
+    background-color: var(--white);
+    box-shadow: 0px 20px 30px -10px rgba(0, 26, 131, 0.14);
+    border-radius: 8px;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: vars.$z-index-interactive;
+    width: 100%;
+    padding: 8px;
+    max-height: 300px;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: vars.$duration opacity vars.$timing, vars.$duration transform vars.$timing;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5px;
+    overflow-y: auto;
+    max-height: 300px - 16px;
+
+    &::-webkit-scrollbar {
+      border-radius: 20px;
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      border-radius: 20px;
+      background: var(--blue-back-btn, #EFECFE);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 20px;
+      background: var(--blue-accent, #246BF5);
+    }
+  }
+
+  &__item {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: vars.$duration background-color vars.$timing, vars.$duration color vars.$timing;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--active, &:hover {
+      color: var(--blue-btn, #001A83);
+      background: var(--blue-back-btn, #EFECFE);
+    }
+  }
+
+  [data-id="not-found"] {
+    display: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    padding: 12px 16px;
+  }
+
+  &--open {
+    .ui-dropdown__body {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: unset;
+    }
+
+    .ui-dropdown__panel {
+      border-color: var(--blue-btn, #001A83);
+    }
+
+    .ui-dropdown__button {
+      transform: rotate(180deg);
+    }
+  }
+}

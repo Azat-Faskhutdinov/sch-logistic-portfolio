@@ -1,0 +1,87 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.ui-form {
+  position: relative;
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--blue-accent, #246BF5);
+  color: var(--white);
+  height: max-content;
+
+  @media (max-width: 1880px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  &__desc {
+    @include mixins.p;
+    margin-top: 16px;
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+    }
+  }
+
+  &__form {
+    margin-top: 40px;
+
+    @media (max-width: 1880px) {
+      margin-top: 24px;
+    }
+  }
+
+  &__success {
+    z-index: vars.$z-index-back;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 24px;
+    border-radius: 24px;
+    background: var(--blue-accent, #246BF5);
+    color: var(--white);
+    padding: 40px;
+    transition: vars.$duration opacity vars.$timing, vars.$duration z-index vars.$timing;
+
+    @media (max-width: 1880px) {
+      padding: 24px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 16px;
+      border-radius: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 356/309;
+      max-height: 309px;
+    }
+
+    &--active {
+      z-index: vars.$z-index-interactive;
+    }
+  }
+
+  &--successful {
+    .ui-form__success {
+      z-index: vars.$z-index-interactive;
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.review-card {
+  border-radius: 16px 16px 20px 20px;
+  background: var(--blue-accent, #246BF5);
+
+  &__header {
+    padding: 16px 24px 40px;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (max-width: 1880px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  &__date {
+    @include mixins.menu;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    @include mixins.h3;
+
+    @media (max-width: 767px) {
+      @include mixins.h3-mob;
+    }
+  }
+
+  &__stars {
+    display: flex;
+    gap: 9.6px;
+    align-items: center;
+
+    i {
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 140%; /* 33.6px */
+
+      @media (max-width: 767px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__text {
+    @include mixins.p;
+    @include mixins.crop-height(12);
+
+    padding: 24px;
+    margin-top: 16px - 40px;
+    border-radius: 16px;
+    background: var(--gray-back, #F5F5F5);
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+      padding: 16px;
+    }
+  }
+}

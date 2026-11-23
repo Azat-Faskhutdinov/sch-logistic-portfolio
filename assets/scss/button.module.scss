@@ -1,0 +1,112 @@
+@use '@/styles/vars/transition';
+@use '@/styles/mixins/typ';
+
+.button {
+  @include typ.button;
+
+  border-radius: 10px;
+  padding: 22px 28px;
+  width: max-content;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  transition: transition.$duration color transition.$timing,
+  transition.$duration background-color transition.$timing,
+  transition.$duration border-color transition.$timing;
+
+  &--white {
+    background: var(--white, #FFFFFF);
+    color: var(--blue-btn);
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--white, #FFFFFF);
+        background-color: transparent;
+        color: var(--white, #FFFFFF);
+      }
+    }
+  }
+
+  &--purple {
+    background: var(--blue-back-btn);
+    color: var(--blue-btn);
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--blue-accent);
+        border-color: var(--blue-accent);
+      }
+    }
+  }
+
+  &--dark-purple {
+    color: var(--blue-back-btn);
+    background: var(--blue-btn);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: transparent;
+        color: var(--blue-btn);
+        border-color: var(--blue-btn);
+      }
+    }
+  }
+
+  &--ghost {
+    border: 1px solid var(--white, #FFF);
+    color: var(--white);
+
+    @media (hover: hover) {
+        &:hover {
+          color:  var(--blue-accent, #246BF5);
+          background-color: var(--white, #FFF);
+        }
+    }
+  }
+
+  &--blue {
+    background: var(--blue-accent, #246BF5);
+    color: var(--white);
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--blue-accent);
+        color:  var(--blue-accent, #246BF5);
+        background-color: var(--white, #FFF);
+      }
+    }
+  }
+
+  &--blue-transparent {
+    background: rgba(0, 0, 0, 0.10);
+    color: var(--white);
+
+    @media (hover: hover) {
+      &:hover {
+        color:  var(--blue-accent, #246BF5);
+        background-color: var(--white, #FFF);
+      }
+    }
+  }
+
+  &--small-pad {
+    padding: 14px 22px;
+  }
+
+  &--fluid {
+    width: 100%;
+  }
+
+  i {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%; /* 35px */
+  }
+}

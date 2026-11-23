@@ -1,0 +1,21 @@
+.logo {
+  width: 106px;
+  height: 68px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  @media (max-width: 1880px) {
+    width: 80px;
+    height: 52px;
+  }
+
+  @media (max-width: 1279px) {
+    width: 65px;
+    height: 42px;
+  }
+
+  img {
+    width: inherit;
+    height: inherit;
+  }
+}

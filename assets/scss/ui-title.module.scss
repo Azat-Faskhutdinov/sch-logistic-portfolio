@@ -1,0 +1,37 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.ui-title {
+  @include mixins.h2;
+  text-align: center;
+  margin-inline: auto;
+
+  @media (max-width: 767px) {
+    @include mixins.h2-mob;
+  }
+
+  &--max-width {
+    max-width: 755px;
+  }
+
+  &--mb {
+    margin-bottom: 64px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &--no-center {
+    text-align: left;
+    margin-inline: initial;
+  }
+
+  &--h1 {
+    @include mixins.h1;
+
+    @media (max-width: 767px) {
+      @include mixins.h1-mob;
+    }
+  }
+}

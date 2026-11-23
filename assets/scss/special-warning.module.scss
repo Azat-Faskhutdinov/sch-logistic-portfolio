@@ -1,0 +1,36 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.special-warning {
+  @include mixins.p;
+
+  font-weight: 500;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 8px;
+  background: var(--blue-back-btn, #EFECFE);
+  color: var(--blue-btn, #001A83);
+
+  @media (max-width: 767px) {
+    @include mixins.p-mob;
+    font-weight: 500;
+  }
+
+  i {
+    flex-shrink: 0;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%; /* 25.2px */
+    border-radius: 50%;
+    background: var(--white, #FFF);
+  }
+}

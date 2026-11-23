@@ -1,0 +1,127 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.main-services {
+  background: var(--gray-back, #F5F5F5);
+  margin-top: 479px - 570px;
+  padding-top: 235px;
+  padding-bottom: 110px;
+
+  @media (max-width: 1880px) {
+    margin-top: 342px - 593px;
+    padding-top: 331px;
+    padding-bottom: 80px;
+  }
+
+  @media (max-width: 1279px) {
+    margin-top: 699px - 1005px;
+    padding-top: 386px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    max-width: calc(1383px + var(--container-gap) + var(--container-gap));
+
+    @media (max-width: 1279px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__left {
+    @media (max-width: 1880px) and (min-width: 1024px) {
+      padding-right: calc(90px - var(--grid-gap));
+    }
+
+    h2 {
+      @include mixins.h2;
+      margin-bottom: 24px;
+
+      @media (max-width: 767px) {
+        @include mixins.h2-mob;
+      }
+    }
+
+    p {
+      @include mixins.p;
+
+      @media (max-width: 767px) {
+        @include mixins.p-mob;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+
+    @media (max-width: 1279px) {
+      justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+      display: grid;
+      grid-template-columns: max-content max-content;
+    }
+  }
+
+  &__circle {
+    @include mixins.h4;
+    text-align: center;
+    display: flex;
+    width: 245px;
+    height: 245px;
+    padding: 62px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    border-radius: 50%;
+    border: 1px solid var(--gray-outline, #D6D6D6);
+
+    @media (max-width: 767px) {
+      font-size: 13px;
+      width: 170px;
+      height: 170px;
+      padding: 48px 24px;
+      gap: 8px;
+    }
+
+    &:nth-child(1) {
+      @media (max-width: 767px) {
+        margin-right: -6px;
+      }
+    }
+
+
+    &:nth-child(2) {
+      @media (min-width: 768px) {
+        margin-inline: -32px;
+      }
+
+      @media (max-width: 767px) {
+        margin-left: -6px;
+      }
+    }
+
+    &:nth-child(3) {
+      @media (max-width: 767px) {
+        justify-self: center;
+        grid-column: span 2;
+        margin-top: -32px;
+      }
+    }
+
+    i {
+      color: var(--blue-accent, #246BF5);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 44.8px */
+
+      @media (max-width: 767px) {
+        font-size: 22px;
+      }
+    }
+  }
+}

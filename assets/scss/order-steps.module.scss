@@ -1,0 +1,73 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.order-steps {
+
+  .ui-title {
+    margin-bottom: 64px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 250px repeat(4,1fr) 204px;
+    gap: var(--grid-gap);
+    grid-auto-rows: 1fr;
+
+    @media (max-width: 1880px) {
+      grid-template-columns: repeat(auto-fit, minmax(287px, 1fr));
+    }
+
+    @media (max-width: 767px) {
+      grid-auto-rows: max-content;
+    }
+  }
+
+  &__card {
+    border-radius: 16px;
+    background: var(--gray-back, #F5F5F5);
+    padding: 16px;
+
+    a {
+      margin-top: 16px;
+    }
+  }
+
+  &__index {
+    @include mixins.h3;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--blue-accent, #246BF5);
+    color: var(--white);
+    margin-bottom: 24px;
+    padding-block: 5.5px;
+
+    @media (max-width: 767px) {
+      @include mixins.h3-mob;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__text {
+    @include mixins.p;
+
+    @media (max-width: 767px) {
+     @include mixins.p-mob;
+    }
+  }
+
+  &__order {
+    width: 100%;
+    text-align: center;
+    border-radius: 16px;
+  }
+}

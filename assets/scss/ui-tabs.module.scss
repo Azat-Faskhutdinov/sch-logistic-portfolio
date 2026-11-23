@@ -1,0 +1,67 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.ui-tabs {
+
+  &__tabs {
+    position: relative;
+
+    .tab-slider {
+      background: var(--blue-btn, #001A83);
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 8px;
+      z-index: vars.$z-index-interactive + vars.$z-index-back;
+      width: 200px;
+      transition: vars.$duration left vars.$timing, vars.$duration width vars.$timing;
+    }
+  }
+
+  &__tab {
+    @include mixins.p;
+    position: relative;
+    z-index: vars.$z-index-interactive;
+    font-weight: 700;
+    display: flex;
+    padding: 24px 32px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    color: var(--black, #000);
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: vars.$duration background-color vars.$timing, vars.$duration color vars.$timing,;
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+      font-weight: 700;
+    }
+
+    &[data-tab-active] {
+      color: white;
+    }
+
+    @media (hover: hover) {
+      &:not([data-tab-active]):hover {
+        color: var(--blue-accent, #246BF5);
+      }
+    }
+  }
+
+  &__content {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease;
+
+    &[data-tab-active] {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      overflow: visible;
+    }
+  }
+}

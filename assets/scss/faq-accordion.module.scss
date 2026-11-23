@@ -1,0 +1,118 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.faq-accordion {
+  $self: &;
+  --padding: 24px;
+  border-radius: 16px;
+
+  @media (max-width: 767px) {
+    --padding: 16px;
+  }
+
+  &__panel {
+    @include mixins.h3;
+    background-color: var(--gray-back, #F5F5F5);
+    border-radius: 16px;
+    padding: var(--padding);
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    cursor: pointer;
+    transition: vars.$duration background-color vars.$timing,
+    vars.$duration color vars.$timing,
+    vars.$duration padding vars.$timing;
+
+    @media (max-width: 767px) {
+      @include mixins.h3-mob;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+          color: var(--blue-accent);
+        }
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    width: 54px;
+    height: 54px;
+    padding: 13px 10px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--white, #FFF);
+    transition: vars.$duration transform vars.$timing;
+
+    @media (max-width: 767px) {
+      width: 44px;
+      height: 44px;
+    }
+
+    i {
+      color: var(--blue-btn, #001A83);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 140%; /* 25.2px */
+
+      @media (max-width: 767px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__collapse {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition: vars.$duration grid-template-rows vars.$timing, vars.$duration opacity vars.$timing, vars.$duration margin vars.$timing;
+  }
+
+  &__body {
+    @include mixins.p;
+    color: var(--gray-text);
+    min-height: 0;
+    padding: 0  var(--padding);
+    border-radius: 16px;
+    background: var(--gray-back, #F5F5F5);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    transition: vars.$duration padding vars.$timing;
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+    }
+  }
+
+  &--active {
+    #{$self}__panel {
+      background-color: var(--blue-accent, #246BF5);
+      color: var(--white);
+      padding-bottom: 40px;
+    }
+
+    #{$self}__arrow {
+      transform: rotate(180deg);
+    }
+
+    #{$self}__collapse {
+      margin-top: -24px;
+      grid-template-rows: 1fr;
+      opacity: 1;
+      pointer-events: unset;
+    }
+
+    #{$self}__body {
+      padding-block:  var(--padding);
+    }
+  }
+}

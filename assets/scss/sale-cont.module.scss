@@ -1,0 +1,25 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.sale-cont {
+
+  h1 {
+    @include mixins.h1;
+
+    @media (max-width: 767px) {
+      @include mixins.h1-mob;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gap);
+    margin-top: 64px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+  }
+}

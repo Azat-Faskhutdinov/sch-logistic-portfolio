@@ -1,0 +1,46 @@
+@use '@/styles/vars/vars';
+
+.swiper-arrow {
+  display: flex;
+  width: 54px;
+  height: 54px;
+  padding: 13px 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--blue-back-btn, #EFECFE);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: vars.$duration transform vars.$timing;
+
+  @media (max-width: 767px) {
+    width: 44px;
+    height: 44px;
+    padding: 13px 10px;
+  }
+
+  @media (hover: hover) {
+      &:hover:not(.swiper-button-disabled)  i{
+        color: var(--blue-accent, #246BF5);
+      }
+  }
+
+  &.swiper-button-disabled {
+    background: var(--gray-back, #F5F5F5);
+    color: var(--gray-text);
+    cursor: initial;
+  }
+
+  i {
+    color: var(--blue-btn, #001A83);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 140%; /* 25.2px */
+    transition: vars.$duration color vars.$timing;
+
+    @media (max-width: 767px) {
+      font-size: 15px;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.main-catalog {
+
+  &__tabs-scroll {
+    margin-top: 40px;
+    margin-bottom: 64px;
+
+    overflow-y: hidden;
+    overflow-x: auto ;
+    margin-inline: calc(-1 * var(--container-gap));
+    padding-left: var(--container-gap);
+    padding-right: calc(var(--container-gap));
+    width: calc(100% + var(--container-gap) * 2);
+
+    @media (max-width: 767px) {
+      margin-top: 24px;
+      margin-bottom: 40px
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 16px;
+    background: var(--gray-back, #F5F5F5);
+    width: max-content;
+    margin-inline: auto;
+
+   .tab-slider {
+      top: 8px!important;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gap);
+
+    @media (max-width: 1023px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &--service {
+      grid-template-columns: repeat(4, 1fr);
+
+      @media (max-width: 1880px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 1023px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

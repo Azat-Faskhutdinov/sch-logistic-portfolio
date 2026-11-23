@@ -1,0 +1,38 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.disclaimer {
+  margin-bottom: var(--section-margin);
+
+  &__container {
+    @include mixins.p;
+    padding-left: 40px;
+    border-left: 4px solid var(--blue-accent, #246BF5);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--gray-text, #5C5C5C);
+    max-width: 1384px;
+    margin-inline: auto;
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+      padding-left: 24px;
+      gap: 12px;
+    }
+
+    a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: var(--blue-accent, #246BF5);
+      cursor: pointer;
+      transition: vars.$duration text-decoration-color vars.$timing;
+
+      @media (hover: hover) {
+          &:hover {
+              text-decoration-color: transparent;
+          }
+      }
+    }
+  }
+}

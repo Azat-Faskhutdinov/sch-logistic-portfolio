@@ -1,0 +1,77 @@
+@use '@/styles/vars/vars';
+
+.header-search {
+  transition: vars.$duration translate vars.$timing, vars.$duration opacity vars.$timing;
+
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 30px var(--container-gap);
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 8px;
+    max-width: 244px;
+    border: 1px solid var(--blue-btn, #001A83);
+    transition: vars.$duration border-color vars.$timing;
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      border: unset;
+    }
+
+    i {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 24px;
+      color: var(--blue-btn);
+      transition: vars.$duration color vars.$timing;
+
+      @media (max-width: 767px) {
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      &:focus-within {
+        border: 1px solid #848cae;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  button {
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        i {
+          color: #848cae;
+        }
+      }
+    }
+  }
+
+  &--active {
+    @media (max-width: 767px) {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: unset;
+    }
+  }
+}

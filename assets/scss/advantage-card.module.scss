@@ -1,0 +1,86 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.advantage-card {
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 8px;
+    align-items: center;
+  }
+
+  p {
+    @include mixins.info;
+    margin-top: 16px;
+    color: var(--gray-text, #5C5C5C);
+
+    @media (max-width: 767px) {
+      margin-top: 0;
+      font-size: 12px;
+      grid-column: 2/ span 1;
+    }
+  }
+
+  br {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__wrap {
+    @include mixins.h4;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: 767px) {
+      @include mixins.h4-mob;
+      display: contents;
+    }
+
+    i {
+      display: flex;
+      width: 55px;
+      height: 55px;
+      justify-content: center;
+      align-items: center;
+
+      color: var(--blue-accent, #246BF5);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+
+      @media (max-width: 767px) {
+        width: 32px;
+        height: 20px;
+        font-size: 22px;
+      }
+    }
+  }
+
+  &--not-main {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    grid-auto-rows: max-content;
+    gap: 8px 16px ;
+    align-items: center;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 32px 1fr;
+    }
+
+    .advantage-card__wrap {
+      display: contents;
+    }
+
+    p {
+      margin-top: 0;
+      grid-column: 2/ span 1;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}

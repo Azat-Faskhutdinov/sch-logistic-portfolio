@@ -1,0 +1,67 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.cost-calc {
+  max-width: 1098px;
+  margin-inline: auto;
+  padding: 40px;
+  border-radius: 24px;
+  background: var(--blue-accent, #246BF5);
+
+  @media (max-width: 1023px) {
+    padding: 24px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 16px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 24px;
+    gap: 24px;
+    border-radius: 8px;
+    background-color: var(--blue-back, #001A83);
+    color: var(--white);
+
+    p {
+      @include mixins.info;
+      font-weight: 600;
+    }
+
+    h3 {
+      @include mixins.h3;
+
+      @media (max-width: 767px) {
+        @include mixins.h3-mob;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__calculate {
+    grid-column: 1 / -1;
+  }
+
+  .ui-title {
+    color: var(--white);
+    margin-bottom: 40px;
+    text-align: left;
+
+    @media (max-width: 767px) {
+      margin-bottom: 24px;
+    }
+  }
+}

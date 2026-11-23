@@ -1,0 +1,20 @@
+.advantages {
+  background: var(--gray-back, #F5F5F5);
+  padding-block: 40px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+
+    @media (max-width: 1439px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 24px;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+}

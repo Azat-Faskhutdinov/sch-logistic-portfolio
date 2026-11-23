@@ -1,0 +1,53 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.types-docs-preset {
+
+  h2 {
+    margin-bottom: 40px;
+    max-width: 926px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+    gap: var(--grid-gap);
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__card {
+    i {
+      color: var(--blue-accent, #246BF5);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 44.8px */
+      margin-bottom: 13px;
+
+      @media (max-width: 767px) {
+        font-size: 22px;
+      }
+    }
+
+    h4 {
+      @include mixins.h4;
+      margin-bottom: 16px;
+
+      @media (max-width: 767px) {
+        @include mixins.h4-mob;
+      }
+    }
+
+    p {
+      @include mixins.info;
+
+      @media (max-width: 767px) {
+        font-size: 13px;
+      }
+    }
+  }
+}

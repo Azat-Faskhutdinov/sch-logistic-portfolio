@@ -1,0 +1,147 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.main-about {
+  $self: &;
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap);
+    margin-bottom: var(--section-margin);
+
+    @media (max-width: 1279px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include mixins.h2;
+    color: var(--white, #FFF);
+    border-radius: 16px;
+    position: relative;
+    height: 394px;
+    padding: 24px;
+
+    @media (max-width: 767px) {
+      @include mixins.h2-mob;
+      height: 160px;
+    }
+
+    &:first-child {
+      background: rgba(36, 107, 245, 0.60);
+    }
+
+    &:nth-child(2) {
+      margin-top: auto;
+      background: rgba(36, 107, 245, 0.80);
+
+      @media (min-width: 768px) {
+        height: 262px;
+      }
+
+      @media (max-width: 1279px) {
+        margin-top: unset;
+      }
+    }
+
+    &:nth-child(3) {
+      background: var(--blue-accent, #246BF5);
+
+      @media (max-width: 1279px) {
+        order: 4;
+      }
+    }
+
+    &:last-child {
+      background: rgba(36, 107, 245, 0.50);
+
+      @media (min-width: 768px) {
+        height: 262px;
+      }
+
+      @media (max-width: 1279px) {
+        margin-top: auto;
+      }
+    }
+  }
+
+  &__card-footer {
+    @include mixins.p;
+    color: var(--black, #000);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    border-radius: 16px;
+    background: var(--gray-back, #F5F5F5);
+    padding: 24px;
+
+    @media (min-width: 768px) {
+      height: 94px;
+    }
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 64px;
+
+    @media (max-width: 1279px) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 767px) {
+      gap: 24px;
+    }
+
+    h2 {
+      @include mixins.h2;
+      max-width: 1384px;
+      grid-column: span 2;
+      justify-self: center;
+
+      @media (max-width: 1279px) {
+        grid-column: span 1;
+      }
+
+      @media (max-width: 767px) {
+        @include mixins.h2-mob;
+      }
+    }
+  }
+
+  &__footer-desc {
+    @include mixins.p;
+    grid-column-start: 2;
+    color: var(--gray-text, #5C5C5C);
+
+    @media (max-width: 1279px) {
+      grid-column: span 1;
+      max-width: 614px;
+      justify-self: center;
+    }
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+    }
+
+    a {
+      margin-top: 40px;
+      width: 387px;
+
+      @media (max-width: 1880px) {
+        width: 100%;
+      }
+    }
+  }
+}

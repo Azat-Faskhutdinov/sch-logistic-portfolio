@@ -1,0 +1,58 @@
+@use '@/styles/vars/media.scss';
+
+* {
+  //outline: 1px solid green;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html:not(.transition) {
+  * {
+    transition-duration: 0ms !important;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+
+  @media (width < media.$media-1280) {
+    scroll-margin-top: 60px;
+  }
+}
+
+ul,ol {
+  list-style: none;
+}
+
+img,
+picture {
+  overflow: hidden;
+}
+
+[hidden] {
+  display: none;
+}
+
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+input:-webkit-autofill, input:-internal-autofill-selected, input:-webkit-autofill:focus {
+  background-color: transparent !important;
+}
+
+nobr {
+  display: inline;
+  white-space: nowrap;
+}
+
+.section-margin {
+  margin-bottom: var(--section-margin);
+}

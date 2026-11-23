@@ -1,0 +1,49 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.bread-crumbs {
+  @include mixins.swiper-margin;
+  overflow-x: auto;
+
+  margin-top: 24px;
+  margin-bottom: 40px;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 20.8px */
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  scrollbar-width: none;
+
+  @media (max-width: 767px) {
+    margin-block: 16px;
+    font-size: 13px;
+  }
+
+  &__link {
+    cursor: pointer;
+    color: var(--gray-text);
+    flex-shrink: 0;
+    transition: vars.$duration color vars.$timing;
+
+    &:hover {
+      color: var(--blue-btn);
+    }
+
+    &:last-child {
+      pointer-events: none;
+      color: var(--blue-btn);
+    }
+  }
+
+  &__sep {
+    color: var(--blue-btn);
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

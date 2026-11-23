@@ -1,0 +1,75 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.ui-swiper {
+
+  &__container {
+    display: grid;
+    grid-template-columns: var(--grid-template);
+    gap: 72px var(--grid-gap);
+    column-gap: var(--grid-gap);
+    row-gap: 72px;
+
+    @media (max-width: 1279px) {
+      grid-column: -1/1;
+      row-gap: 64px;
+    }
+
+    @media (max-width: 767px) {
+      row-gap: 40px;
+    }
+
+    .swiper {
+      grid-column: -1/1;
+      min-width: 0;
+
+      @include mixins.swiper-margin;
+
+      @media (min-width: 768px) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__title {
+    grid-column:4 / span 6;
+    justify-self: center;
+
+    @media (max-width: 1279px) {
+      grid-column: -1/1;
+    }
+  }
+
+  &__control {
+    grid-column: 11 / span 2;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 1880px) {
+      grid-column: 10 / span 3;
+    }
+
+    @media (max-width: 1279px) {
+      grid-column: -1/1;
+      justify-self: center;
+      order: 3;
+    }
+
+    @media (max-width: 767px) {
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__pagination {
+    @include mixins.p;
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}

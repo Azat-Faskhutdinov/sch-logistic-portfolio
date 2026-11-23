@@ -1,0 +1,11 @@
+.main-form {
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &--gray {
+    background: linear-gradient(to bottom, rgb(245, 245, 245) 50%, rgb(255, 255, 255) 50%);
+  }
+}

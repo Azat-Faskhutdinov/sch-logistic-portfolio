@@ -1,0 +1,151 @@
+@use '@/styles/vars/transition';
+@use '@/styles/mixins/typ';
+@use '@/styles/vars/vars';
+
+.header-submenu {
+  --body-gap: 16px;
+  @include typ.menu;
+
+  cursor: pointer;
+
+  @media (max-width: 1279px) {
+    width: 100%;
+    border-bottom: 1px solid var(--blue-back-btn, #EFECFE);
+    font-weight: 400;
+  }
+
+  &__body {
+    transition: transition.$duration transform transition.$timing,
+    transition.$duration opacity transition.$timing;
+
+    @media (min-width: 1280px) {
+      background: var(--white, #FFFFFF);
+      position: absolute;
+      top: 100%;
+      left: var(--container-gap);
+      width: 100%;
+      max-width: calc(100% - var(--container-gap) * 2);
+
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+
+      max-height: calc(100vh - 152px - 120px);
+      overflow-y: auto;
+
+      & > a {
+        display: block;
+        padding: 6px 12px;
+      }
+    }
+
+    &--short {
+      @media (min-width: 1280px) {
+        max-width: 150px;
+      }
+    }
+  }
+
+  [data-id='panel'] {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: 1279px) {
+        padding: 12px 16px;
+    }
+
+    i {
+      transition: 200ms transform linear;
+    }
+  }
+
+  &[data-id="accordion"] {
+    @media (width >= vars.$media-1280) {
+      .submenu-content {
+        padding: 0 10px 0 0 ;
+      }
+    }
+
+    & > [data-id='body'] {
+      padding-left: 20px;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: 200ms opacity linear, 300ms max-height linear
+    }
+
+    & > [data-id='panel'] {
+      width: 100%;
+      i {
+        transform: rotate(0);
+      }
+    }
+
+    &.active {
+      & > [data-id='panel'] {
+        color: var(--blue-btn);
+
+        @media (max-width: 1279px) {
+          border-bottom: 1px solid var(--blue-back-btn, #EFECFE);
+        }
+      }
+
+      & > [data-id='body'] {
+        opacity: 1 !important;
+        max-height: 1000px !important;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+    }
+  }
+
+  &--active {
+    [data-id='panel'] {
+      color: var(--blue-btn);
+      i {
+        //transform: rotate(90deg);
+      }
+    }
+
+    .header-submenu__body {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 501;
+    }
+  }
+
+  &[data-showmore] {
+    @media (max-width: 1279px) {
+      display: none!important;
+    }
+
+    & > [data-id="panel"] > i {
+      color: var(--blue-btn, #001A83);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .header-submenu__body {
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+      padding: 20px;
+      gap: 10px;
+
+      & > .header-submenu > .header-submenu__body {
+        position: static;
+        padding: 0;
+      }
+    }
+  }
+}

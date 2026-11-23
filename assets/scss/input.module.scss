@@ -1,0 +1,12 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.input {
+  @include mixins.inputs;
+  width: 100%;
+  color: var(--gray-back, #F5F5F5);
+
+  &::placeholder {
+    color: var(--gray-back, #F5F5F5);
+  }
+}

@@ -1,0 +1,65 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.charachteristics-preset {
+
+  h2 {
+    margin-bottom: 64px;
+    max-width: 1080px;
+
+    @media (max-width: 1439px) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--grid-gap);
+    margin-bottom: 40px;
+
+    @media (min-width: 1881px) {
+      max-width: 1242px;
+      margin-left: auto;
+    }
+
+    @media (max-width: 1439px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      .warning {
+        grid-column: -1/1;
+      }
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__card {
+
+    h4 {
+      @include mixins.h4;
+      margin-bottom: 16px;
+
+      @media (max-width: 767px) {
+        @include mixins.h4-mob;
+      }
+    }
+
+    p {
+      @include mixins.info;
+      color: var(--gray-text);
+
+      @media (max-width: 767px) {
+        font-size: 13px;
+      }
+    }
+  }
+}

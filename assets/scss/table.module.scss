@@ -1,0 +1,134 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.table {
+  @media (max-width: 1439px) {
+    overflow-y: auto;
+    margin-left: calc(-1 * var(--container-gap));
+    width: calc(100% + var(--container-gap) + var(--container-gap));
+  }
+
+  @media (max-width: 1439px) {
+    padding-bottom: 40px;
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 24px;
+  }
+
+ @include mixins.scrollbar;
+
+  table {
+    width: 100%;
+  }
+
+  thead {
+    display: block;
+    border-radius: 8px 8px 0px 0px;
+    background: var(--blue, #003861);
+    color: var(--white);
+
+    th {
+      @include mixins.h3;
+      font-weight: 600;
+
+      @media (max-width: 767px) {
+        @include mixins.h3-mob;
+      }
+    }
+  }
+
+  tr {
+    display: grid;
+    grid-template-columns: 387px repeat(var(--table-columns-count), minmax(205px, 1fr));
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 1880px) {
+      grid-template-columns: 287px repeat(var(--table-columns-count), minmax(205px, 1fr));
+    }
+
+    @media (max-width: 767px) {
+      gap: 8px;
+      grid-template-columns: 200px repeat(var(--table-columns-count), minmax(130px, 1fr));
+    }
+  }
+
+  td, th {
+    text-align: center;
+    padding-block: 16px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 130%; /* 23.4px */
+
+    @media (max-width: 767px) {
+      padding-block: 8px;
+      font-size: 13px;
+    }
+
+    &:first-child {
+      text-align: left;
+      padding-inline: var(--container-gap);
+      font-weight: 500;
+
+      @media (max-width: 1880px) {
+        padding-right: unset;
+      }
+    }
+  }
+
+  &__heading {
+    background: var(--blue-back, #EFECFE);
+    border-radius: 8px;
+
+    td:first-child {
+      @include mixins.h3;
+      font-weight: 600;
+
+      @media (max-width: 767px) {
+        @include mixins.h3-mob;
+      }
+    }
+
+    &:first-of-type {
+      border-radius: 0px 0px 8px 8px;
+    }
+  }
+
+  &--two-columns {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    tr {
+      grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+
+      &:first-child {
+        border-radius: 8px;
+      }
+    }
+  }
+
+  &--even {
+    tr {
+      gap: 24px;
+      grid-template-columns: repeat(var(--table-columns-count), minmax(185px, 1fr));
+
+      @media (max-width: 767px) {
+        gap: 8px;
+        grid-template-columns: repeat(var(--table-columns-count), minmax(120px, 1fr));
+      }
+    }
+
+    td, th {
+      &:first-child {
+        text-align: center;
+        padding-inline: 16px;
+      }
+    }
+  }
+}

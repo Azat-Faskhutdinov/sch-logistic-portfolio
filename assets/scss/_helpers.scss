@@ -1,0 +1,27 @@
+@mixin swiper-margin {
+  @media (max-width: 767px) {
+    padding-left: var(--container-gap);
+    padding-right: calc(var(--container-gap));
+    margin-left: calc(-1 * var(--container-gap));
+    width: calc(100% + var(--container-gap) + var(--container-gap)) !important;
+    max-width: unset;
+  }
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    border-radius: 20px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: var(--blue-back-btn, #EFECFE);
+    margin-inline: var(--container-gap);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: var(--blue-accent, #246BF5);
+  }
+}

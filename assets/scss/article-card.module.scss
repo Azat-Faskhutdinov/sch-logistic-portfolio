@@ -1,0 +1,72 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.article-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__date {
+    @include mixins.menu;
+    font-weight: 400;
+    margin-bottom: 8px;
+    color: var(--gray-text);
+  }
+
+  &__title {
+    @include mixins.h3;
+    @include mixins.crop-height(3);
+    margin-bottom: 16px;
+
+    @media (max-width: 1880px) {
+      @include mixins.crop-height-update(4);
+    }
+
+    @media (max-width: 767px) {
+      @include mixins.h3-mob;
+      @include mixins.crop-height-update(3);
+    }
+  }
+
+  &__desc {
+    @include mixins.p;
+    @include mixins.crop-height(3);
+
+    color: var(--gray-text);
+
+    margin-bottom: 32px;
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+  }
+
+  .sell-card__info {
+    margin-bottom: 0;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @media (max-width: 1880px) {
+      padding-bottom: 16px;
+    }
+  }
+
+  a {
+    color: var(--blue-btn);
+  }
+
+  @media (hover: hover) {
+    .button--white:hover {
+      background: transparent;
+      border-color: var(--blue-btn);
+      color: var(--blue-btn);
+    }
+  }
+}

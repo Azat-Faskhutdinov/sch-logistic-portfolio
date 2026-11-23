@@ -1,0 +1,21 @@
+// Подключение библиотек
+@use '~@verno.digital/newest-css-reset/src/reset';
+@use '~swiper/swiper';
+// ---
+
+// Подклчюение шрифтов
+@use './fonts/inter';
+@use './fonts/all-full';
+// ---
+
+// Подключение переменных, для иницилизации css-переменных
+@use './vars/vars';
+// ---
+
+// Базовые стили
+@use './base';
+// ---
+
+// BEM блоки
+@use '../modules/**/*.scss';
+// ---

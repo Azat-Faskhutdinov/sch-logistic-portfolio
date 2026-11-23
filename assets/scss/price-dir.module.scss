@@ -1,0 +1,58 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.price-dir {
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--grid-gap);
+    padding: 40px;
+    border-radius: 16px;
+    background: var(--blue-back-btn, #EFECFE);
+    margin-bottom: 40px;
+
+    @media (max-width: 1279px) {
+      grid-template-columns: 1fr;
+      padding: 24px;
+      gap: 16px;
+    }
+
+    @media (max-width: 767px) {
+      padding: 16px;
+    }
+  }
+
+  &:not(:has(.price-dir__header)) {
+    .ui-title {
+      margin-bottom: 40px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .price-dir__desc {
+      max-width: 814px;
+      margin-inline: auto;
+      margin-bottom: 64px;
+
+      @media (max-width: 767px) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__desc {
+    @include mixins.p;
+    color: var(--gray-text);
+
+    @media (max-width: 1279px) {
+      margin-bottom: 24px - 16px;
+    }
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+    }
+  }
+}

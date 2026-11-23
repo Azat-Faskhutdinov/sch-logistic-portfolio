@@ -1,0 +1,134 @@
+@use '@/styles/mixins/mixins.scss';
+@use '@/styles/vars/vars.scss';
+
+.pages-navigation {
+  $self: &;
+
+  background-color: var(--gray-back);
+  min-height: 100dvh;
+  padding-block: 60px;
+  font-family: "Inter", sans-serif;
+
+  @media (width < vars.$media-768) {
+    padding-block: 40px;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 1600px + 30px + 30px;
+    padding-inline: 30px;
+    margin-inline: auto;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: var(--grid-gap);
+    align-items: center;
+
+    @media (width < vars.$media-768) {
+      row-gap: 36px;
+    }
+  }
+
+  &__left {
+    font-size: 16px;
+    line-height: 130%;
+    grid-column: span 4;
+    max-width: 710px;
+    color: #757c86;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 8;
+      order: 2;
+    }
+  }
+
+  &__right {
+    grid-column: span 4;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 8;
+      order: 1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__left-title {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 110%;
+    margin-bottom: 12px;
+    color: var(--blue);
+  }
+
+  &__nav-shell {
+    grid-column: span 4;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    order: 3;
+
+    @media (width < vars.$media-1440) {
+      grid-column: span 6;
+    }
+
+    @media (width < vars.$media-1280) {
+      grid-column: span 8;
+      margin-top: 40px;
+    }
+
+    @media (width < vars.$media-768) {
+      margin-top: 20px;
+    }
+  }
+
+  &__item {
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      #{$self}__nav {
+        color: #e97c7a;
+      }
+    }
+    &:active {
+      #{$self}__nav {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__placeholder {
+    font-weight: 500;
+    font-size: 20px;
+    grid-column: span 2;
+    color: var(--black);
+    margin-bottom: 6px;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 4;
+    }
+  }
+
+  &__nav {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--gray);
+    grid-column: span 2;
+
+    transition: vars.$duration color vars.$timing;
+
+    @media (width < vars.$media-768) {
+      grid-column: span 4;
+    }
+  }
+}

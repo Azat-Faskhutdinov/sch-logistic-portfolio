@@ -1,0 +1,62 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.warning {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 23.4px */
+
+  border-radius: 8px;
+  background: var(--white, #FFF);
+  padding: 8px 16px;
+  color: #971497;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: max-content;
+
+  @media (max-width: 767px) {
+    font-size: 13px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  &__shell {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #FEECFE;
+    flex-shrink: 0;
+
+    i {
+      color: #971497;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 140%; /* 25.2px */
+    }
+  }
+
+  a {
+    color: var(--blue-btn);
+    text-decoration: underline;
+    text-decoration-color: currentColor;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    transition: vars.$duration text-decoration-color vars.$timing;
+
+    @media (hover: hover) {
+        &:hover {
+          text-decoration-color: transparent;
+        }
+    }
+  }
+
+  &--no-red {
+    color: var(--gray-text);
+  }
+}

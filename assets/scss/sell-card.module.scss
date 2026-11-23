@@ -1,0 +1,88 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.sell-card {
+  border-radius: 16px;
+  background: var(--gray-back, #F5F5F5);
+
+  &__image {
+    padding: 8px 8px 0 8px;
+
+    @media (max-width: 767px) {
+      padding: 4px 4px 0 4px;
+    }
+
+    img {
+      width: 100%;
+      height: 259px;
+      object-fit: cover;
+      border-radius: 16px;
+
+      @media (max-width: 1799px) {
+        height: 182px;
+      }
+
+      @media (max-width: 1279px) {
+        height: 188px;
+      }
+
+      @media (max-width: 767px) {
+        height: 156px;
+      }
+    }
+  }
+
+  &__info {
+    padding: 24px;
+    margin-bottom: 24px;
+
+    @media (max-width: 1880px) {
+      margin-bottom: 16px;
+      padding: 16px 16px 12px;
+    }
+  }
+
+  &__title {
+    @include mixins.p;
+    margin-bottom: 24px;
+
+    @media (max-width: 767px) {
+      @include mixins.p-mob;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__condition {
+    @include mixins.h5;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--gray-text);
+
+    @media (max-width: 767px) {
+      @include mixins.h5-mob;
+    }
+  }
+
+  &__price {
+    @include mixins.h3;
+
+    @media (max-width: 767px) {
+      @include mixins.h3-mob;
+    }
+  }
+
+  &__footer {
+    margin-top: -24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 16px;
+    background: var(--blue-accent, #246BF5);
+
+    @media (max-width: 1880px) {
+      padding: 16px;
+      margin-top: -16px;
+    }
+  }
+}

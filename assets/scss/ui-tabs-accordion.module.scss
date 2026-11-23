@@ -1,0 +1,105 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.ui-tabs-accordion {
+  margin-bottom: var(--section-margin);
+
+  &__scroll {
+    display: flex;
+
+    @media (min-width: 1024px) {
+      overflow-x: auto;
+      padding-bottom: 24px;
+      padding-left: var(--container-gap);
+      padding-right: var(--container-gap);
+      margin-left: calc(-1 * var(--container-gap));
+      width: calc(100% + var(--container-gap) + var(--container-gap));
+
+      @include mixins.scrollbar;
+    }
+
+    @media (max-width: 1023px) {
+      flex-direction: column;
+    }
+  }
+
+  &__tabs {
+    border-top: 1px solid var(--gray-outline, #D6D6D6);
+    margin-bottom: 64px - 24px;
+
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      border-top: unset;
+      margin-bottom: 0;
+    }
+
+    .ui-tabs__tab {
+      flex-grow: 1;
+      flex-shrink: 1;
+      min-width: 211px;
+
+      @media (max-width: 1023px) {
+        margin-bottom: 24px;
+        background: var(--blue-btn, #001A83);
+        justify-content: space-between;
+        padding: 8px 16px;
+      }
+
+      &:not([data-tab-active]) {
+        @media (max-width: 1023px) {
+          background-color: var(--gray-back, #F5F5F5);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover .detail-tabs__arrow {
+          background-color: var(--blue-back-btn, #EFECFE)
+        }
+      }
+
+      &[data-tab-active] .detail-tabs__arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    .ui-tabs__content {
+      @media (max-width: 1023px) {
+        &[data-tab-active] {
+          padding-bottom: 24px;
+        }
+      }
+    }
+
+    .tab-slider {
+      @media (max-width: 1023px) {
+        display: none;
+      }
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    padding: 13px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--blue-back-btn, #EFECFE);
+    background-color: var(--white, #FFF);
+    cursor: pointer;
+    transition: vars.$duration background-color vars.$timing, vars.$duration transform vars.$timing;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    i {
+      color: var(--blue-btn, #001A83);
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 140%; /* 21px */
+    }
+  }
+}

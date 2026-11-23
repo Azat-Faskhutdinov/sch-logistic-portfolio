@@ -1,0 +1,40 @@
+@use '@/styles/mixins/mixins';
+@use '@/styles/vars/vars';
+
+.label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 67px;
+  padding: 25px 24px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: var(--blue-brn, #001A83);
+  width: 100%;
+  transition: vars.$duration padding vars.$timing, vars.$duration border-color vars.$timing;
+
+  &__error {
+    position: absolute;
+    top: 14px;
+    left: 24px;
+    opacity: 0;
+
+    color: var(--Error, #CB0000);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 15.6px */
+
+    transition: vars.$duration opacity vars.$timing;
+  }
+
+  &[is-error] {
+    padding-top: 34px;
+    padding-bottom: 14px;
+    border-color: var(--Error, #CB0000);
+
+    .label__error {
+      opacity: 1;
+    }
+  }
+}
