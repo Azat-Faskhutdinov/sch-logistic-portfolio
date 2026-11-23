@@ -241,55 +241,55 @@ video {
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-Regular.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-Regular.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-Black.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-Black.woff2) format("woff2");
   font-weight: 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-LightBETA.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-LightBETA.woff2) format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-SemiBold.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-SemiBold.woff2) format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-Bold.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-Bold.woff2) format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-ExtraLightBETA.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-ExtraLightBETA.woff2) format("woff2");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-ExtraBold.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-ExtraBold.woff2) format("woff2");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-ThinBETA.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-ThinBETA.woff2) format("woff2");
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
   font-family: "Inter";
-  src: url(/assets/fonts/inter/Inter-Medium.woff2) format("woff2");
+  src: url(../fonts/inter/Inter-Medium.woff2) format("woff2");
   font-weight: 500;
   font-style: normal;
 }
@@ -11279,7 +11279,7 @@ video {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/assets/fonts/fa/fa-brands-400.woff2) format("woff2"), url(/assets/fonts/fa/fa-brands-400.ttf) format("truetype");
+  src: url(../fonts/fa/fa-brands-400.woff2) format("woff2"), url(../fonts/fa/fa-brands-400.ttf) format("truetype");
 }
 .fa-brands,
 .fab {
@@ -12730,7 +12730,7 @@ video {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(/assets/fonts/fa/fa-duotone-900.woff2) format("woff2"), url(/assets/fonts/fa/fa-duotone-900.ttf) format("truetype");
+  src: url(../fonts/fa/fa-duotone-900.woff2) format("woff2"), url(../fonts/fa/fa-duotone-900.ttf) format("truetype");
 }
 .fa-duotone,
 .fad {
@@ -27553,7 +27553,7 @@ video {
   font-style: normal;
   font-weight: 300;
   font-display: block;
-  src: url(/assets/fonts/fa/fa-light-300.woff2) format("woff2"), url(/assets/fonts/fa/fa-light-300.ttf) format("truetype");
+  src: url(../fonts/fa/fa-light-300.woff2) format("woff2"), url(../fonts/fa/fa-light-300.ttf) format("truetype");
 }
 .fa-light,
 .fal {
@@ -27568,7 +27568,7 @@ video {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/assets/fonts/fa/fa-regular-400.woff2) format("woff2"), url(/assets/fonts/fa/fa-regular-400.ttf) format("truetype");
+  src: url(../fonts/fa/fa-regular-400.woff2) format("woff2"), url(../fonts/fa/fa-regular-400.ttf) format("truetype");
 }
 .fa-regular,
 .far {
@@ -27583,7 +27583,7 @@ video {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(/assets/fonts/fa/fa-solid-900.woff2) format("woff2"), url(/assets/fonts/fa/fa-solid-900.ttf) format("truetype");
+  src: url(../fonts/fa/fa-solid-900.woff2) format("woff2"), url(../fonts/fa/fa-solid-900.ttf) format("truetype");
 }
 .fa-solid,
 .fas {
@@ -27599,7 +27599,7 @@ video {
   font-style: normal;
   font-weight: 100;
   font-display: block;
-  src: url(/assets/fonts/fa/fa-thin-100.woff2) format("woff2"), url(/assets/fonts/fa/fa-thin-100.ttf) format("truetype");
+  src: url(../fonts/fa/fa-thin-100.woff2) format("woff2"), url(../fonts/fa/fa-thin-100.ttf) format("truetype");
 }
 .fa-thin,
 .fat {
@@ -27609,46 +27609,46 @@ video {
   font-family: "Font Awesome 5 Brands";
   font-display: block;
   font-weight: 400;
-  src: url(/assets/fonts/fa/fa-brands-400.woff2) format("woff2"), url(/assets/fonts/fa/fa-brands-400.ttf) format("truetype");
+  src: url(../fonts/fa/fa-brands-400.woff2) format("woff2"), url(../fonts/fa/fa-brands-400.ttf) format("truetype");
 }
 @font-face {
   font-family: "Font Awesome 5 Pro";
   font-display: block;
   font-weight: 900;
-  src: url(/assets/fonts/fa/fa-solid-900.woff2) format("woff2"), url(/assets/fonts/fa/fa-solid-900.ttf) format("truetype");
+  src: url(../fonts/fa/fa-solid-900.woff2) format("woff2"), url(../fonts/fa/fa-solid-900.ttf) format("truetype");
 }
 @font-face {
   font-family: "Font Awesome 5 Pro";
   font-display: block;
   font-weight: 400;
-  src: url(/assets/fonts/fa/fa-regular-400.woff2) format("woff2"), url(/assets/fonts/fa/fa-regular-400.ttf) format("truetype");
+  src: url(../fonts/fa/fa-regular-400.woff2) format("woff2"), url(../fonts/fa/fa-regular-400.ttf) format("truetype");
 }
 @font-face {
   font-family: "Font Awesome 5 Pro";
   font-display: block;
   font-weight: 300;
-  src: url(/assets/fonts/fa/fa-light-300.woff2) format("woff2"), url(/assets/fonts/fa/fa-light-300.ttf) format("truetype");
+  src: url(../fonts/fa/fa-light-300.woff2) format("woff2"), url(../fonts/fa/fa-light-300.ttf) format("truetype");
 }
 @font-face {
   font-family: "Font Awesome 5 Duotone";
   font-display: block;
   font-weight: 900;
-  src: url(/assets/fonts/fa/fa-duotone-900.woff2) format("woff2"), url(/assets/fonts/fa/fa-duotone-900.ttf) format("truetype");
+  src: url(../fonts/fa/fa-duotone-900.woff2) format("woff2"), url(../fonts/fa/fa-duotone-900.ttf) format("truetype");
 }
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(/assets/fonts/fa/fa-solid-900.woff2) format("woff2"), url(/assets/fonts/fa/fa-solid-900.ttf) format("truetype");
+  src: url(../fonts/fa/fa-solid-900.woff2) format("woff2"), url(../fonts/fa/fa-solid-900.ttf) format("truetype");
 }
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(/assets/fonts/fa/fa-brands-400.woff2) format("woff2"), url(/assets/fonts/fa/fa-brands-400.ttf) format("truetype");
+  src: url(../fonts/fa/fa-brands-400.woff2) format("woff2"), url(../fonts/fa/fa-brands-400.ttf) format("truetype");
 }
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(/assets/fonts/fa/fa-regular-400.woff2) format("woff2"), url(/assets/fonts/fa/fa-regular-400.ttf) format("truetype");
+  src: url(../fonts/fa/fa-regular-400.woff2) format("woff2"), url(../fonts/fa/fa-regular-400.ttf) format("truetype");
   unicode-range:
     u+f003,
     u+f006,
@@ -27722,7 +27722,7 @@ video {
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(/assets/fonts/fa/fa-v4compatibility.woff2) format("woff2"), url(/assets/fonts/fa/fa-v4compatibility.ttf) format("truetype");
+  src: url(../fonts/fa/fa-v4compatibility.woff2) format("woff2"), url(../fonts/fa/fa-v4compatibility.ttf) format("truetype");
   unicode-range:
     u+f041,
     u+f047,
@@ -31578,7 +31578,7 @@ nobr {
   background: linear-gradient(to bottom, rgb(245, 245, 245) 50%, rgb(255, 255, 255) 50%);
 }
 .main-preview-info {
-  background-image: url(/assets/images/info-back.svg);
+  background-image: url(../images/info-back.svg);
   background-repeat: no-repeat;
   width: 142px;
   height: 146px;
@@ -34090,7 +34090,7 @@ body:has(.modal--open > .modal-center) .overlay {
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  background: #ffffff url(../assets/images/map-bcg.png) no-repeat right;
+  background: #ffffff url(../images/map-bcg.png) no-repeat right;
   background-size: cover;
   height: 660px;
   border-radius: 24px;
